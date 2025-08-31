@@ -1,6 +1,6 @@
 import React from "react";
 import { Link,NaveLink, Element } from 'react-scroll';
-
+import { IoMdDownload } from "react-icons/io";
 const Naveber = () => {
   return (
     <div className="navbar shadow-sm fixed top-0 bg-gray-800">
@@ -52,12 +52,23 @@ const Naveber = () => {
             <li className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-indigo-500"> <Link to="contact"  smooth={true} duration={500}>Contact</Link></li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a href="/Resume.pdf"
+        <div className="navbar-end ">
+         
+         <div className="flex justify-center items-center">
+          
+            <a href="/Resume.pdf"
            download="Aman_Munshi_Resume.pdf"
-           className=" px-6 py-2 rounded-md font-bold bg-gradient-to-r from-emerald-500 to-indigo-500">
+           
+           className="  px-6 py-2 rounded-md font-bold bg-gradient-to-r from-emerald-500 to-indigo-500">
+ 
+  
             Resume
+                      
           </a>
+         
+         </div>
+       
+          
         </div>
       </div>
     </div>
