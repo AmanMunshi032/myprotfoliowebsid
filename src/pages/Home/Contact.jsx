@@ -3,6 +3,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
 import {  Element } from 'react-scroll';
+import { motion } from "framer-motion"
 const Contact = () => {
   return (
     <Element name="contact">
@@ -10,7 +11,14 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-6  ">
         <h1 className=" text-5xl font-bold text-center my-12 ">Contact us</h1>
         <div className=" lg:flex gap-12 bg-gray-900 p-6 rounded-2xl">
-          <div className="mt-4 space-y-2 w-full  ">
+
+          < motion.div className="mt-4 space-y-2 w-full " 
+            initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 2, x: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          
+          >
            
             <div className="bg-gray-700 w-full h-18 rounded-lg  flex items-center px-4">
               <MdOutlineEmail size={24} />
@@ -37,8 +45,13 @@ const Contact = () => {
                 <strong>WhatsApp:</strong>+8801949457409
               </p>
             </div>
-          </div>
-          <div className="w-full">
+          </motion.div>
+
+          <motion.div className="w-full"   initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 2, x: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          >
             <form className="mt-6 grid grid-cols-1 gap-4">
               <input className="p-3 border rounded" placeholder="Your name" />
               <input className="p-3 border rounded" placeholder="Your email" />
@@ -56,7 +69,8 @@ const Contact = () => {
               </button>
              </div>
             </form>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import {  Element } from 'react-scroll';
+import { motion } from "framer-motion";
 const About = () => {
   return (
     <Element name='About'>
@@ -7,15 +8,26 @@ const About = () => {
       <div id="about" className=" max-w-7xl mx-auto px-6 py-16 ">
         <h1 className="font-bold text-5xl text-center my-6">About me</h1>         
       <div className="lg:flex gap-8 ">   
-        <div className=" ">
+        < motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 2, x: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+           className="space-y-6"
+        >
           <img
             src="https://i.ibb.co.com/Ld7WfZCq/IMG-4723-1.png"
             alt="Your Photo"
             className=" w-full rounded-xl object-cover border-white border-5"
           />
-        </div>
+        </motion.div>
 
-        <div className="  space-y-2 bg-gray-900 p-6  rounded-2xl shadow-md ">
+        <motion.div className="  space-y-2 bg-gray-900 p-6  rounded-2xl shadow-md "
+         initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <p>
             I am a passionate MERN Stack Developer with hands-on experience in building full-stack web applications using MongoDB, Express.js, React, and Node.js. I specialize in creating scalable, user-friendly, and responsive applications with a strong focus on clean code, performance, and modern UI/UX practices.
           </p>
@@ -68,7 +80,7 @@ const About = () => {
               Meterial UI
             </button>
           </div>       */}
-        </div>
+        </motion.div>
         
       </div>
 
