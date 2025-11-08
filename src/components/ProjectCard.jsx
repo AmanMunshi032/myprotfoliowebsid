@@ -1,51 +1,106 @@
+import React from "react";
+import { Link } from "react-router-dom"; // ✅ Correct import
 
+const ProjectCard = ({ data }) => {
+  if (!data) return null;
+  const {
+    repoClient,
+    repoServer,
+    live,
+    improvements,
+    challenges,
+    stack,
+    description,
+    name,
+    image,
+  } = data;
 
-import React from 'react';
-import { Link } from 'react-router';
+  return (
+    <div className="max-w-7xl mx-auto mt-10 border border-gray-200 p-6 md:p-10 rounded-2xl shadow-xl  bg-gray-800 space-y-6">
+      {/* ✅ Image Section */}
+      <div className="w-full overflow-hidden rounded-xl">
+        <img
+          className="w-full h-64 md:h-[450px] object-cover hover:scale-105 transition-transform duration-500"
+          src={image}
+          alt={name}
+        />
+      </div>
 
-const ProjectCard = ({data}) => {
-    console.log(data)
-     const {repoClient,repoServer,live, improvements,challenges, stack,description, name,image}= data||{}
-    return (
-        <div className=' max-w-7xl mx-auto mt-22'>
-             <div className=' '>
-             <img  className="w-full h-90 object-cover "src={ image} alt="" /> 
-          </div> 
-          <div className=' space-y-2'>
-             <p className='text-3xl font-semibold'>{name}</p>
-              <p>{description}</p>
-               <h1 className='text-2xl font-semibold'>Technologies Used</h1>
-               <div className='flex gap-4'>
-                {stack?.map((p)=><p className='border-2 px-3 py-1 rounded-md'>{p}</p>)}
-               </div>
-               {/* challenges */}            
-              <div className='parent'>
-                 <h1 className='text-2xl font-semibold'>Challenges Faced</h1>
-               <div>{challenges?.map((C)=><li>{C}</li> )}
-                </div> 
-              </div>
-              {/* improvements */}
-              <div>
-                <h1 className='text-2xl font-semibold'>Future Improvements</h1>
-                {improvements?.map((M)=><li>{M}</li>)}
-              </div>
-           
-              
-             <div className='space-x-2 space-y-4 my-6'>
-                <a href={live}>
-                 <button className='px-6 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-indigo-500'>Live-project</button> 
-                 </a>
-                <a href={repoClient}> <button className='px-6 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-indigo-500'> client code</button></a> 
-            <a href={repoServer}>
-              <button className='px-6 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-indigo-500'>Server code</button></a>
-              <Link to='/'>
-              <button className='px-6 py-2 rounded-lg border-2'>Back</button>
-              </Link>
-             </div>
+      {/* ✅ Project Info */}
+      <div className="space-y-5">
+        <h1 className="text-3xl md:text-4xl font-bold text-white">{name}</h1>
+        <p className="text-white leading-relaxed">{description}</p>
+
+        {/* ✅ Tech Stack */}
+        <div>
+          <h2 className="text-2xl font-semibold text-white mb-2">
+            Technologies Used
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {stack?.map((tech, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-sm md:text-base border border-gray-300 rounded-full bg-gradient-to-r from-emerald-100 to-indigo-100 text-gray-800 font-medium"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
-           
         </div>
-    );
+
+        {/* ✅ Challenges */}
+        <div>
+          <h2 className="text-2xl font-semibold text-white mb-2">
+            Challenges Faced
+          </h2>
+          <ul className="list-disc list-inside text-white space-y-1 ml-2">
+            {challenges?.map((c, index) => (
+              <li key={index}>{c}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ✅ Future Improvements */}
+        <div>
+          <h2 className="text-2xl font-semibold text-white mb-2">
+            Future Improvements
+          </h2>
+          <ul className="list-disc list-inside text-white space-y-1 ml-2">
+            {improvements?.map((i, index) => (
+              <li key={index}>{i}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ✅ Buttons */}
+        <div className="flex flex-wrap gap-3 mt-6">
+          <a href={live} target="_blank" rel="noopener noreferrer">
+            <button className="px-5 py-2.5 rounded-lg text-white font-medium bg-gradient-to-r from-emerald-500 to-indigo-500 hover:opacity-90 transition">
+              Live Project
+            </button>
+          </a>
+
+          <a href={repoClient} target="_blank" rel="noopener noreferrer">
+            <button className="px-5 py-2.5 rounded-lg text-white font-medium bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 transition">
+              Client Code
+            </button>
+          </a>
+
+          <a href={repoServer} target="_blank" rel="noopener noreferrer">
+            <button className="px-5 py-2.5 rounded-lg text-white font-medium bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition">
+              Server Code
+            </button>
+          </a>
+
+          <Link to="/">
+            <button className="px-5 py-2.5 rounded-lg border-2 border-gray-400 text-white hover:bg-blue-300 transition">
+              Back
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProjectCard;

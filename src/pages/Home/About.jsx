@@ -7,7 +7,7 @@ const About = () => {
     <div className="bg-gray-800 ">
       <div id="about" className=" max-w-7xl mx-auto px-6 py-16 ">
         <h1 className="font-bold text-5xl text-center my-6">About me</h1>         
-      <div className="lg:flex gap-8 ">   
+      <div className="lg:flex gap-8   space-y-4 ">   
         < motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 2, x: 1 }}
@@ -42,44 +42,7 @@ const About = () => {
             Personality: Curious, detail-oriented, and friendly — I enjoy
             collaborating and learning from others.
           </p>
-          {/* <div className="space-x-2  space-y-3  ">
-            <button className="px-6 py-2 font-semibold text-white  bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              React js
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              Next js
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              Express js
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              MongoDB
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              Javascript{" "}
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              Tailwind css
-            </button>
-            <button className="px-6 py-2 font-semibold text-white bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-md">
-              Node js
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-linear-to-r from-emerald-500 to-blue-500 rounded-md">
-              Figma
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-linear-to-r from-emerald-500 to-blue-500 rounded-md">
-              github
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-linear-to-r from-emerald-500 to-blue-500 rounded-md">
-              Firebase
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-linear-to-r from-emerald-500 to-blue-500 rounded-md">
-              Bootstap
-            </button>
-            <button className="px-6 py-2 font-semibold text-white  bg-linear-to-r from-emerald-500 to-blue-500 rounded-md">
-              Meterial UI
-            </button>
-          </div>       */}
+          
         </motion.div>
         
       </div>

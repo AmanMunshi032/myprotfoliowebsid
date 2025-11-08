@@ -57,7 +57,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        < div className="  flex-1 overflow-hidden">
+        < div className="  flex-1 overflow-hidden   ">
           <motion.img
             src="https://i.ibb.co.com/8nZNsvZp/Adobe-Express-file.png"
             alt="Your Photo"

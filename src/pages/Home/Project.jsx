@@ -4,29 +4,29 @@ import { Link } from "react-router";
 import { Element } from "react-scroll";
   import { motion } from "motion/react"
 const project = [
-  {
-    id: 1,
-    slug: "lost-and-found",
-    name: "Lost & Found Platform",
-    image:
-      "https://i.ibb.co.com/dJ4FJZyj/Screenshot-94.png",
-    live: "https://assingment-4494e.web.app/",
-    repoClient: "https://github.com/AmanMunshi032/Lost-and-Found-web-Application",
-    stack: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
-    description:
-      "A full-stack platform where users can post lost or found items with images, location, and contact details.",
-    challenges: [
-      "Designing a scalable data model for items and users",
-      "Implementing secure auth and protected routes",
-      "Handling image uploads and responsive UI",
-    ],
-    improvements: [
-      "Add real-time notifications",
-      "Integrate image moderation",
-      "Implement advanced search and filters",
-    ],
-  },
-  {
+
+   {
+  id: 1,
+  slug: "ez-rent",
+  name: "Ez-Rent Full-Featured  rental Platform",
+  image: "https://i.ibb.co.com/ksCxyyZg/Screenshot-175.png",
+  live: "https://rzrent.web.app/",
+  repoClient: "https://github.com/shafee-ullah/EzRent-Client-Side?tab=readme-ov-file",
+  stack: ["MERN", "JWT", "Stripe", "Tailwind", "React Router"],
+  description:
+    "A full-featured rental platform where hosts can manage properties, bookings, and payments, while guests can explore, rent, and review listings.",
+  challenges: [
+    "Implementing secure multi-role authentication (Host, User, Admin)",
+    "Integrating Stripe for real-time payments and refunds",
+    "Optimizing dashboard performance with pagination and filtering",
+  ],
+  improvements: [
+    "Add AI-based property recommendation",
+    "Include analytics dashboard for hosts",
+    "Enable PWA and offline capabilities",
+  ],
+},
+{
     id: 2,
     slug: "medical-camps",
     name: "Medical Camp Management System",
@@ -48,28 +48,30 @@ const project = [
       "Audit logs and admin insights",
     ],
   },
-   {
-    id: 4,
-    slug: "freelance-marketplace",
-    name: "Freelance Task Marketplace",
+  
+  {
+    id: 3,
+    slug: "lost-and-found",
+    name: "Lost & Found Platform",
     image:
-      "https://i.ibb.co.com/c546D76/Screenshot-102.png",
-    live: "https://freelancer-marketplase.web.app/",
-    repoClient: "https://github.com/AmanMunshi032/Freencermarketpalce",
-    stack: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT", "Stripe"],
+      "https://i.ibb.co.com/dJ4FJZyj/Screenshot-94.png",
+    live: "https://assingment-4494e.web.app/",
+    repoClient: "https://github.com/AmanMunshi032/Lost-and-Found-web-Application",
+    stack: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
     description:
-      "A full-featured marketplace where clients can post tasks, freelancers can bid, and payments are handled securely.",
+      "A full-stack platform where users can post lost or found items with images, location, and contact details.",
     challenges: [
-      "Building a secure bidding and proposal system",
-      "Role-based dashboards for clients and freelancers",
-      "Integrating escrow-style payment with Stripe",
+      "Designing a scalable data model for items and users",
+      "Implementing secure auth and protected routes",
+      "Handling image uploads and responsive UI",
     ],
     improvements: [
-      "Real-time chat between clients and freelancers",
-      "AI-based skill matching",
-      "Mobile app version for freelancers on the go",
+      "Add real-time notifications",
+      "Integrate image moderation",
+      "Implement advanced search and filters",
     ],
   },
+  
    
 ];
 const Project = () => {
@@ -82,15 +84,15 @@ const Project = () => {
             
           >
             {project.map((item) => (
-              <motion.div className="bg-white  rounded-xl shadow overflow-hidden flex flex-col " >
+              <motion.div className="bg-gray-900 rounded-xl shadow overflow-hidden flex flex-col " >
                 <img
                   src={item.image}
                   alt={item.name}
                   className="h-46 w-full object-cover"
                 />
                 <div className="p-4 flex-1 flex flex-col">
-                  <h3 className="font-semibold text-black">{item.name}</h3>
-                  <p className="mt-2 mb-2 text-sm text-gray-600 flex-1">
+                  <h3 className="font-semibold text-white">{item.name}</h3>
+                  <p className="mt-2 mb-2 text-sm text-white flex-1">
                     {item.description}
                   </p>
 
@@ -113,16 +115,9 @@ const Project = () => {
                       className="btn border-0 bg-linear-to-r from-emerald-500 to-indigo-500" >
                       view ditels
                     </button> </Link>
-                    <a href={item.live}>   <button className="text-black px-3 py-2 border-2 rounded-lg font-bold">Live links</button></a>
+                    <a href={item.live}> <button className="text-white px-3 py-2 border-2 rounded-lg font-bold">Live links</button></a>
                       
-                        <div className="text-xs px-5 py-2 gap-2 rounded-lg bg-black items-center flex">
-                      <FaGithub size={24} />
-                    <a href={item. repoClient}> 
-                      <button className=" text-amber-50 text-lg ">
-                      code
-                      </button>
-                      </a> 
-                    </div>
+                      
                       
                     
                   </div>
