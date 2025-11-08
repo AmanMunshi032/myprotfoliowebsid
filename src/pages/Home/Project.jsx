@@ -49,7 +49,7 @@ const project = [
     ],
   },
    {
-    id: 3,
+    id: 4,
     slug: "freelance-marketplace",
     name: "Freelance Task Marketplace",
     image:
